@@ -1,0 +1,53 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "serverFarmId": {
+      "type": "string"
+    },
+    "apiDefinitionUrl": {
+      "type": "string"
+    },
+    "corsAllowedOrigins": {
+      "type": "string"
+    },
+    "scmType": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2016-08-01",
+      "name": "[parameters('name')]",
+      "type": "Microsoft.Web/sites",
+      "properties": {
+        "name": "[parameters('name')]",
+        "serverFarmId": "[parameters('serverFarmId')]",
+        "cors": {
+          "allowedOrigins": "[split(parameters('corsAllowedOrigins'), ',')]"
+        },
+        "apiDefinition": {
+          "url": "[parameters('apiDefinitionUrl')]"
+        }
+      },
+      "location": "[parameters('location')]",
+      "kind": "api"
+    }
+  ],
+  "outputs": {
+    "defaultSiteHostname": {
+      "type": "string",
+      "value": "[reference(concat('Microsoft.Web/sites/', parameters('name'))).hostnames[0]]"
+    },
+    "apiAppId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Web/sites',  parameters('name'))]"
+    }
+  }
+}
