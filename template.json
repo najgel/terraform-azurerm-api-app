@@ -16,9 +16,6 @@
     },
     "corsAllowedOrigins": {
       "type": "string"
-    },
-    "scmType": {
-      "type": "string"
     }
   },
   "resources": [
