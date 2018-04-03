@@ -13,7 +13,6 @@ resource "azurerm_template_deployment" "api_app" {
     "serverFarmId"       = "${var.app_service_plan_id}"
     "apiDefinitionUrl"   = "${var.api_definition_url}"
     "corsAllowedOrigins" = "${join(",", var.cors_allowed_origins)}"
-    "scmType"            = "${var.scm_type}"
     "location"           = "${azurerm_resource_group.api_app.location}"
   }
 
