@@ -1,0 +1,9 @@
+queue: Hosted Linux Preview
+steps:
+- script: docker run -v $PWD:/tf-test/module --rm innovationnorway/terraform-test rake -f ../Rakefile build
+  displayName: rake build
+
+- script: docker run -v $PWD:/tf-test/module -e ARM_CLIENT_ID -e ARM_TENANT_ID -e ARM_SUBSCRIPTION_ID -e ARM_CLIENT_SECRET -e ARM_TEST_LOCATION -e ARM_TEST_LOCATION_ALT --rm innovationnorway/terraform-test rake -f ../Rakefile e2e
+  env:
+    ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+  displayName: rake e2e
