@@ -45,6 +45,10 @@
     "apiAppId": {
       "type": "string",
       "value": "[resourceId('Microsoft.Web/sites',  parameters('name'))]"
+    },
+    "apiAppName": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Web/sites', parameters('name'))).name]"
     }
   }
 }
