@@ -17,10 +17,10 @@ This terraform module deploys an API App in Azure.
 ```hcl
 
 module "app_service_plan" {
-  source                = "github.com/innovationnorway/terraform-azurerm-app-service-plan"
-  app_service_plan_name = "test-api-plan"
-  resource_group_name   = "test-api-rg"
-  location              = "westeurope"
+  source                   = "github.com/innovationnorway/terraform-azurerm-app-service-plan"
+  app_service_plan_name    = "test-api-plan"
+  resource_group_name      = "test-api-rg"
+  location                 = "westeurope"
 }
 
 module "api_app" {
@@ -49,7 +49,7 @@ Specifies the supported Azure location where the resource exists.
 
 ### app_service_plan_id
 
-The ID of the App Service Plan within which to create this Function App.
+The ID of the App Service Plan within which to create this API App.
 
 ### api_definition_url
 
@@ -71,4 +71,4 @@ The resource group ID.
 
 ### default_site_hostname
 
-The default hostname associated with the Function App, such as `mysite.azurewebsites.net`.
+The default hostname associated with the API App, such as `mysite.azurewebsites.net`.
