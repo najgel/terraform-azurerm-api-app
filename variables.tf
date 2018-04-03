@@ -23,8 +23,3 @@ variable "cors_allowed_origins" {
   default     = []
   description = "Sets the list of origins that should be allowed to make cross-origin calls (for example: http://example.com:12345). Use * to allow all."
 }
-
-variable "scm_type" {
-  default     = "None"
-  description = "	SCM type."
-}
