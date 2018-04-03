@@ -65,9 +65,9 @@ Gets or sets the list of origins that should be allowed to make cross-origincall
 
 The API App ID.
 
-### resource_group_id
+### api_app_name
 
-The resource group ID.
+The API App name.
 
 ### default_site_hostname
 
