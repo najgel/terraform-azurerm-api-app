@@ -57,7 +57,11 @@ The URL of the API definition.
 
 ### cors_allowed_origins
 
-Gets or sets the list of origins that should be allowed to make cross-origincalls (for example: http://example.com:12345). Use `*` to allow all. 
+Gets or sets the list of origins that should be allowed to make cross-origincalls (for example: http://example.com:12345). Use `*` to allow all.
+
+### tags
+
+A mapping of tags to assign to the resource.
 
 ## Outputs
 
