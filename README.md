@@ -59,6 +59,10 @@ The URL of the API definition.
 
 Gets or sets the list of origins that should be allowed to make cross-origincalls (for example: http://example.com:12345). Use `*` to allow all.
 
+### MSI
+
+If set to 'yes' MSI is enabled on the API app.
+
 ### tags
 
 A mapping of tags to assign to the resource.
