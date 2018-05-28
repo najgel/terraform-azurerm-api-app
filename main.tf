@@ -1,3 +1,5 @@
+data "azurerm_client_config" "current" {}
+
 resource "azurerm_resource_group" "api_app" {
   name     = "${var.resource_group_name}"
   location = "${var.location}"
@@ -15,6 +17,7 @@ resource "azurerm_template_deployment" "api_app" {
     "corsAllowedOrigins" = "${jsonencode(var.cors_allowed_origins)}"
     "location"           = "${var.location}"
     "tags"               = "${jsonencode(var.tags)}"
+    "MSI"                = "${var.MSI}"
   }
 
   deployment_mode = "Incremental"

@@ -24,6 +24,11 @@ variable "cors_allowed_origins" {
   description = "Sets the list of origins that should be allowed to make cross-origin calls (for example: http://example.com:12345). Use * to allow all."
 }
 
+variable "MSI" {
+  default     = "no"
+  description = "If this variable is set to yes MSI will be enabled for the API app, for more information see https://docs.microsoft.com/en-us/azure/app-service/app-service-managed-service-identity"
+}
+
 variable "tags" {
   default     = {}
   description = "A mapping of tags to assign to the resource."

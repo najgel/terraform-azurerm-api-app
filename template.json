@@ -19,6 +19,14 @@
     },
     "corsAllowedOrigins": {
       "type": "string"
+    },
+    "MSI": {
+      "type": "string"
+    }
+  },
+  "variables" : {
+    "MSIConf": {
+      "type": "SystemAssigned"
     }
   },
   "resources": [
@@ -29,6 +37,7 @@
       "location": "[parameters('location')]",
       "kind": "api",
       "tags": "[json(parameters('tags'))]",
+      "identity" : "[if(equals(parameters('MSI'),'yes'), variables('MSIConf'), json('null'))]",
       "properties": {
         "name": "[parameters('name')]",
         "serverFarmId": "[parameters('serverFarmId')]"
