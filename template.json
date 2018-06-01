@@ -22,6 +22,9 @@
     },
     "MSI": {
       "type": "string"
+    },
+    "httpsOnly": {
+      "type": "string"
     }
   },
   "variables" : {
@@ -40,7 +43,8 @@
       "identity" : "[if(equals(parameters('MSI'),'yes'), variables('MSIConf'), json('null'))]",
       "properties": {
         "name": "[parameters('name')]",
-        "serverFarmId": "[parameters('serverFarmId')]"
+        "serverFarmId": "[parameters('serverFarmId')]", 
+        "httpsOnly": "[if(equals(parameters('MSI'),'yes'), true, false)]"
       },
       "resources": [
         {
