@@ -18,6 +18,7 @@ resource "azurerm_template_deployment" "api_app" {
     "location"           = "${var.location}"
     "tags"               = "${jsonencode(var.tags)}"
     "MSI"                = "${var.MSI}"
+    "httpsOnly"          = "${var.httpsOnly}"
   }
 
   deployment_mode = "Incremental"

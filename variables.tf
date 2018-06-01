@@ -29,6 +29,11 @@ variable "MSI" {
   description = "If this variable is set to yes MSI will be enabled for the API app, for more information see https://docs.microsoft.com/en-us/azure/app-service/app-service-managed-service-identity"
 }
 
+variable "httpsOnly" {
+  default     = "no"
+  description = "If this variable is set to yes the API app will only accept HTTPS calls"
+}
+
 variable "tags" {
   default     = {}
   description = "A mapping of tags to assign to the resource."
