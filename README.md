@@ -63,6 +63,10 @@ Gets or sets the list of origins that should be allowed to make cross-origincall
 
 If set to 'yes' MSI is enabled on the API app.
 
+### httpsOnly
+
+If set to 'yes' httpsOnly is enabled on the API app.
+
 ### tags
 
 A mapping of tags to assign to the resource.
