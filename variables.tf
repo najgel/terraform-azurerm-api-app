@@ -34,6 +34,16 @@ variable "httpsOnly" {
   description = "If this variable is set to yes the API app will only accept HTTPS calls"
 }
 
+variable "phpVersion" {
+  default     = "off"
+  description = "Set the php version you would like your API app to use or set it to off to disable php. Valid options are: 5.6, 7.0, 7.1, 7.2 or off"
+}
+
+variable "alwaysOn" {
+  default     = "no"
+  description = "Set this variable to toggle always on. If set to yes always on is enabled, any other value is interpreted as disabled"
+}
+
 variable "tags" {
   default     = {}
   description = "A mapping of tags to assign to the resource."

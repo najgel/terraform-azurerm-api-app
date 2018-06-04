@@ -67,6 +67,15 @@ If set to 'yes' MSI is enabled on the API app.
 
 If set to 'yes' httpsOnly is enabled on the API app.
 
+### phpVersion
+
+Set the php version you would like your API app to use or set it to off to disable php. Valid options are: 5.6, 7.0, 7.1, 7.2 or off
+
+### alwaysOn
+
+Set this variable to toggle always on. If set to yes always on is enabled, any other value is interpreted as disabled
+
+
 ### tags
 
 A mapping of tags to assign to the resource.

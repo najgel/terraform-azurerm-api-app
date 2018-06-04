@@ -25,6 +25,12 @@
     },
     "httpsOnly": {
       "type": "string"
+    },
+    "phpVersion": {
+      "type": "string"
+    },
+    "alwaysOn":{
+      "type": "string"
     }
   },
   "variables" : {
@@ -55,6 +61,8 @@
             "[concat('Microsoft.Web/sites/', parameters('name'))]"
           ],
           "properties": {
+            "alwaysOn": "[if(equals(parameters('alwaysOn'),'yes'), bool('true'), bool('false'))]",
+            "phpVersion": "[parameters('phpVersion')]",
             "cors": {
               "allowedOrigins": "[json(parameters('corsAllowedOrigins'))]"
             },
