@@ -44,7 +44,7 @@
       "properties": {
         "name": "[parameters('name')]",
         "serverFarmId": "[parameters('serverFarmId')]", 
-        "httpsOnly": "[if(equals(parameters('MSI'),'yes'), true, false)]"
+        "httpsOnly": "[if(equals(parameters('httpsOnly'),'yes'), bool('true'), bool('false'))]"
       },
       "resources": [
         {
